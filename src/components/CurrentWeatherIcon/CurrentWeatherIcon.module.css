@@ -1,0 +1,8 @@
+.currentWeatherIcon {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    mix-blend-mode: luminosity;
+    width: 14em;
+    height: 14em;
+    margin: 0 auto;
+}

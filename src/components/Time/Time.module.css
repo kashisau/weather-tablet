@@ -1,0 +1,10 @@
+.timeHeading {
+    font-size: 9em;
+    text-shadow: rgba(0,0,0,0.5) 2px 2px 16px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    margin: 0;
+    text-align: center;
+    place-self: center;
+}

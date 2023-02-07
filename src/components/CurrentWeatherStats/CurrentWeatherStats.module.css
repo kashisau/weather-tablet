@@ -1,0 +1,15 @@
+.currentWeatherStats {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    text-align: center;
+}
+
+.temperatureStat, .homeTemperature, .outsideTemperature {
+    display: inline-block;
+    font-size: 2em;
+    font-weight: normal;
+    text-shadow: rgba(0,0,0,0.5) 2px 2px 8px;
+
+    margin: 0 20px;
+    vertical-align: top;
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="57px" height="64px" viewBox="0 0 57 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>home-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="49.9998237%" y1="100%" x2="49.9998237%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#D98B2B" offset="0%"></stop>
+            <stop stop-color="#F2B544" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-Screen" transform="translate(-89.000000, -444.000000)" fill-rule="nonzero">
+            <g id="Group-4" transform="translate(89.000000, 443.000000)">
+                <g id="home-icon" transform="translate(0.000000, 1.000000)">
+                    <g id="Group-2">
+                        <path d="M0,57.6992 C0,61.1792 2.82098,64 6.30082,64 L50.4064,64 C53.8864,64 56.7074,61.1792 56.7074,57.6992 L56.7074,26.0564 C56.7074,24.2652 55.945,22.5586 54.6108,21.3634 L32.5578,1.607754 C30.165,-0.535918 26.5424,-0.535918 24.1494,1.607754 L2.0966,21.3634 C0.76241,22.5586 0,24.2652 0,26.0564 L0,57.6992 Z" id="Shape" fill="url(#linearGradient-1)"></path>
+                        <path d="M18.90244,64 L37.8048,64 L37.8048,41.9472 C37.8048,40.2072 36.3944,38.7968 34.6544,38.7968 L22.0528,38.7968 C20.313,38.7968 18.90244,40.2072 18.90244,41.9472 L18.90244,64 Z" id="Shape" fill-opacity="0.48" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
