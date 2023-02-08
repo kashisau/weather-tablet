@@ -1,5 +1,6 @@
 'use client';
-import styles from './currentWeatherIcon.module.css'
+import styles from './CurrentWeatherIcon.module.css'
+
 export default function CurrentWeatherIcon() {
 
     return (

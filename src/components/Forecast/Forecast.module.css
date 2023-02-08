@@ -1,33 +1,9 @@
-.forecastComponents {
-    text-align: center;
-}
-
 .forecast {
-    composes: forecastComponents;
-    width: 120px;
-    display: inline-block;
-}
-
-.forecastDay {
-    composes: forecastComponents;
-    font-size: 3em;
-}
-
-.forecastIconFrame {
-    height: 120px;
-}
-
-.forecastIcon {
-    composes: forecastComponents;
-    width: 100%;
-}
-
-.dayMax {
-    composes: forecastComponents;
-    font-size: 3em;
-}
-
-.dayMin {
-    composes: forecastComponents;
-    font-size: 2em;
-}
+    composes: mainSection from '../../styles/Home.module.css';
+    grid-area: forecast;
+    background: rgb(217,139,43);
+    background: radial-gradient(circle at 100% -10%, rgba(217,139,43,1) 0%, rgba(242,181,68,1) 100%);
+  }
+  .forecast {
+    text-align: center;
+  }

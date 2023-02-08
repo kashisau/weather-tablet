@@ -1,0 +1,35 @@
+.forecastComponents {
+    text-align: center;
+    text-shadow: rgba(0,0,0,0.5) 2px 2px 8px;
+}
+
+.forecastDay {
+    composes: forecastComponents;
+    width: 140px;
+    padding: 50px;
+    display: inline-block;
+}
+
+.forecastDayText {
+    composes: forecastComponents;
+    font-size: 3em;
+}
+
+.forecastDayIconFrame {
+    height: 120px;
+}
+
+.forecastDayIcon {
+    composes: forecastComponents;
+    width: 100%;
+}
+
+.dayMax {
+    composes: forecastComponents;
+    font-size: 3em;
+}
+
+.dayMin {
+    composes: forecastComponents;
+    font-size: 2em;
+}

@@ -24,23 +24,10 @@ export default function Home() {
         <div className={styles.summary}>
           <Time />
           <CurrentWeatherIcon />
-          <CurrentWeatherStats />
-          <TemperatureGraph />
+          {/* <CurrentWeatherStats /> */}
+          {/* <TemperatureGraph /> */}
         </div>
-        <div className={styles.forecast}>
-          <Forecast
-            day='Monday'
-            outlook='sunny'
-            dayMax={32}
-            dayMin={21}
-          />
-          <Forecast
-            day='Tuesday'
-            outlook='overcast'
-            dayMax={32}
-            dayMin={21}
-          />
-        </div>
+        <Forecast/>
         <div className={styles.music}>
           Roon
         </div>

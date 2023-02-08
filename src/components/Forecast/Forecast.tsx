@@ -1,22 +1,47 @@
+import { useEffect, useState } from 'react';
+import ForecastDay from '../ForecastDay/ForecastDay';
 import styles from './Forecast.module.css'
+import { extractDaysForecast, ForecastDayData, WillyWeatherForecast } from '../../util/WeatherWizard'
 
-interface ForecastInput {
-    day: string,
-    outlook: string,
-    dayMax: number,
-    dayMin: number
-}
+const FORECAST_URL = process.env.NEXT_PUBLIC_FORECAST_URL
+const FORECAST_TOKEN = process.env.NEXT_PUBLIC_FORECAST_TOKEN
 
-export default function Forecast({day, outlook, dayMax, dayMin} : ForecastInput) {
+export default function Forecast() {
+
+    const initialWeatherData: ForecastDayData[] = [];
+    const [forecastData, setForecastData] = useState(initialWeatherData);
+    useEffect(() => { getForecast(); setInterval(getForecast, 1000*60) }, []);
+
+    async function getForecast() {
+        if (!FORECAST_URL || !FORECAST_TOKEN) {
+            throw new Error("Missing environment variables.")
+        }
+        
+        const forecastFetchResponse = await fetch(FORECAST_URL, {
+            headers: {
+                Authorization: `Bearer ${FORECAST_TOKEN}`
+            }
+        })
+
+        const forecast = await forecastFetchResponse.json() as WillyWeatherForecast
+        const days = extractDaysForecast(forecast)
+        setForecastData(days)        
+    }
 
     return (
         <div className={styles.forecast}>
-            <h2 className={styles.forecastDay}>{day.substring(0, 3)}</h2>
-            <div className={styles.forecastIconFrame}>
-                <img className={styles.forecastIcon} src={`/images/weather-icon-${outlook}.svg`} width="120" alt={`${day} is looking ${outlook}`} />
-            </div>
-            <p className={styles.dayMax}>{dayMax}</p>
-            <p className={styles.dayMin}>{dayMin}</p>
+            {forecastData.map(
+                day => (
+                    <ForecastDay
+                        day={day.date.toLocaleString('en-us', {weekday:'long'})}
+                        outlook={day.weather.precisCode}
+                        dayMax={day.weather.max}
+                        dayMin={day.weather.min}
+                        key={day.date.toLocaleDateString()}
+                    />
+                )
+            )}
+            
         </div>
     );
 }
