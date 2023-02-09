@@ -24,12 +24,12 @@ export default function Home() {
         <div className={styles.summary}>
           <Time />
           <CurrentWeatherIcon />
-          {/* <CurrentWeatherStats /> */}
+          <CurrentWeatherStats />
           {/* <TemperatureGraph /> */}
         </div>
         <Forecast/>
         <div className={styles.music}>
-          Roon
+          
         </div>
       
     </>

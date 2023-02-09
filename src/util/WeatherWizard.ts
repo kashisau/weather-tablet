@@ -74,7 +74,7 @@ export const precisCodeIcons = [
     },
     {
       "code": "partly-cloudy",
-      "icon": ".weather-icon-mostly-fine.svg"
+      "icon": "weather-icon-mostly-fine.svg"
     },
     {
       "code": "mostly-cloudy",
@@ -118,15 +118,15 @@ export const precisCodeIcons = [
     },
     {
       "code": "chance-thunderstorm-fine",
-      "icon": "public/images/weather-icon-stormy.svg"
+      "icon": "weather-icon-stormy.svg"
     },
     {
       "code": "chance-thunderstorm-cloud",
-      "icon": "public/images/weather-icon-stormy.svg"
+      "icon": "weather-icon-stormy.svg"
     },
     {
       "code": "chance-thunderstorm-showers",
-      "icon": "public/images/weather-icon-stormy.svg"
+      "icon": "weather-icon-stormy.svg"
     },
     {
       "code": "thunderstorm",
