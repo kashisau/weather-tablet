@@ -22,7 +22,7 @@ ChartJS.register(
   Legend
 );
 
-const switchYAxisLines = (lineIndex: number): string => {
+const switchYAxisLines = (lineIndex) => {
     const minor = "rgba(199,209,217,0.25)"
     const major = "rgba(199,209,217,0.25)"
     const axis = "#979797"
@@ -71,7 +71,7 @@ export const chartOptions = {
       },
       ticks: {
         // For a category axis, the val is the index so the lookup via getLabelForValue is needed
-        callback: function(value: number, index: number): string {
+        callback: function(value, index) {
           switch (index) {
             case 0:
             default:
@@ -100,7 +100,7 @@ export const chartOptions = {
   },
 };
 
-const centreChildStyle: CSSProperties = {
+const centreChildStyle = {
     position: "absolute",
     top: "50%",
     transform: "translateY(-50%)",

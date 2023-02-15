@@ -11,7 +11,7 @@ const TEMPERATURE_TOKEN = process.env.NEXT_PUBLIC_TEMPERATURE_TOKEN
 // no chart will be rendered.
 // website examples showcase many properties,
 // you'll often use just a few of them.
-export default function yGraph() {
+export default function TemperatureGraph() {
   const [temperatureData, setTemperatureData] = useState(undefined)
   useEffect(() => {
     getTemperature()
