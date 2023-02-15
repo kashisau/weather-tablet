@@ -6,7 +6,7 @@
 .forecastDay {
     composes: forecastComponents;
     width: 140px;
-    padding: 50px;
+    padding: 20px;
     display: inline-block;
 }
 

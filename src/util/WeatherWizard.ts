@@ -39,6 +39,16 @@ export interface WillyWeatherForecast {
     }
 }
 
+
+interface ParramattaTemperatureHour {
+  x: number,
+  y: number
+}
+
+export interface ParramattaWeatherTemperature {
+  data: ParramattaTemperatureHour[]
+}
+
 export function extractDaysForecast(forecast: WillyWeatherForecast) {
     const forecastDays: ForecastDayData[] = []
 
@@ -66,7 +76,7 @@ export const precisCodeIcons = [
     },
     {
       "code": "mostly-fine",
-      "icon": "weather-icon-mostly-fine.svg"
+      "icon": "weather-icon-sunny.svg"
     },
     {
       "code": "high-cloud",

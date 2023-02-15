@@ -24,8 +24,8 @@ export default function Home() {
         <div className={styles.summary}>
           <Time />
           <CurrentWeatherIcon />
-          <CurrentWeatherStats />
-          {/* <TemperatureGraph /> */}
+          {/* <CurrentWeatherStats /> */}
+          <TemperatureGraph />
         </div>
         <Forecast/>
         <div className={styles.music}>
