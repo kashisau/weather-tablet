@@ -6,9 +6,7 @@ import { useEffect, useState } from 'react';
 export default function Time() {
     const [now, setNow] = useState(extractHourMinute(new Date()))
 
-    function refreshNow() {
-        setNow(extractHourMinute(new Date()))
-    }
+    
 
     function extractHourMinute(date: Date): string {
         const dateIsoParts = date.toLocaleTimeString().split('T')
@@ -26,6 +24,9 @@ export default function Time() {
     }
 
     useEffect(() => {
+        function refreshNow() {
+            setNow(extractHourMinute(new Date()))
+        }
         setInterval(refreshNow, 1000);
       }, []);
 

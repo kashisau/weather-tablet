@@ -10,23 +10,26 @@ export default function Forecast() {
 
     const initialWeatherData: ForecastDayData[] = [];
     const [forecastData, setForecastData] = useState(initialWeatherData);
-    useEffect(() => { getForecast(); setInterval(getForecast, 1000*60) }, []);
-
-    async function getForecast() {
-        if (!FORECAST_URL || !FORECAST_TOKEN) {
-            throw new Error("Missing environment variables.")
-        }
-        
-        const forecastFetchResponse = await fetch(FORECAST_URL, {
-            headers: {
-                Authorization: `Bearer ${FORECAST_TOKEN}`
+    useEffect(() => { 
+        async function getForecast() {
+            if (!FORECAST_URL || !FORECAST_TOKEN) {
+                throw new Error("Missing environment variables.")
             }
-        })
+            
+            const forecastFetchResponse = await fetch(FORECAST_URL, {
+                headers: {
+                    Authorization: `Bearer ${FORECAST_TOKEN}`
+                }
+            })
+    
+            const forecast = await forecastFetchResponse.json() as WillyWeatherForecast
+            const days = extractDaysForecast(forecast)
+            setForecastData(days)        
+        }
+        setInterval(getForecast, 1000*60) 
+    }, []);
 
-        const forecast = await forecastFetchResponse.json() as WillyWeatherForecast
-        const days = extractDaysForecast(forecast)
-        setForecastData(days)        
-    }
+    
 
     return (
         <div className={styles.forecast}>
