@@ -1,36 +1,33 @@
-'use client';
+'use client'
 
 import styles from './Time.module.css'
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
+import { type ReactElement } from 'react'
 
-export default function Time() {
-    const [now, setNow] = useState(extractHourMinute(new Date()))
+export default function Time (): ReactElement {
+  const [now, setNow] = useState(extractHourMinute(new Date()))
 
-    
+  function extractHourMinute (date: Date): string {
+    const dateIsoParts = date.toLocaleTimeString().split('T')
 
-    function extractHourMinute(date: Date): string {
-        const dateIsoParts = date.toLocaleTimeString().split('T')
+    if (dateIsoParts.length === 0) { throw new ReferenceError('extractHourMinute must be supplied with a Date object') }
 
-        if (!dateIsoParts)
-            throw new ReferenceError("extractHourMinute must be supplied with a Date object")
+    const timePart = dateIsoParts.pop()
+    if (timePart === undefined) { throw new ReferenceError('extractHourMinute must be supplied with a Date object') }
 
-        const timePart = dateIsoParts.pop()
-        if (!timePart)
-            throw new ReferenceError("extractHourMinute must be supplied with a Date object")
-        
-        const [hours, minutes, secondsAndTimezone] = timePart.split(':')
-        return `${parseInt(hours)}:${minutes}`
-        
+    const [hours, minutes] = timePart.split(':')
+    return `${parseInt(hours)}:${minutes}`
+  }
+
+  useEffect(() => {
+    function refreshNow (): void {
+      setNow(extractHourMinute(new Date()))
     }
+    refreshNow()
+    setInterval(refreshNow, 1000)
+  }, [])
 
-    useEffect(() => {
-        function refreshNow() {
-            setNow(extractHourMinute(new Date()))
-        }
-        setInterval(refreshNow, 1000);
-      }, []);
-
-    return (
-        <h1 className={styles.timeHeading}>{now}</h1>
-    );
+  return (
+    <h1 className={styles.timeHeading}>{now}</h1>
+  )
 }

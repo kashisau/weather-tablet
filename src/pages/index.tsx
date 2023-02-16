@@ -1,18 +1,13 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 
 import Time from '@/components/Time/Time'
 import CurrentWeatherIcon from '@/components/CurrentWeatherIcon/CurrentWeatherIcon'
-import CurrentWeatherStats from '@/components/CurrentWeatherStats/CurrentWeatherStats'
 import Forecast from '@/components/Forecast/Forecast'
 import TemperatureGraph from '@/components/TemperatureGraph/TemperatureGraph'
+import { type ReactElement } from 'react'
 
-const inter = Inter({ subsets: ['latin'] })
-const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
-
-export default function Home() {
+export default function Home (): ReactElement {
   return (
     <>
       <Head>
@@ -24,14 +19,13 @@ export default function Home() {
         <div className={styles.summary}>
           <Time />
           <CurrentWeatherIcon />
-          {/* <CurrentWeatherStats /> */}
           <TemperatureGraph />
         </div>
         <Forecast/>
         <div className={styles.music}>
-          
+
         </div>
-      
+
     </>
   )
 }
