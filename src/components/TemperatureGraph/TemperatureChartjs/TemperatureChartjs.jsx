@@ -115,15 +115,6 @@ export const chartOptions = {
           size: '16px'
         },
         callback: function (value, index) {
-          const currentTime = new Date()
-          const currentHour = currentTime.getHours()
-          const valueLabel = this.getLabelForValue(value)
-          const valueLabelHour = parseInt(valueLabel)
-          const hourValue = /AM$/i.test(valueLabel) ? valueLabelHour : valueLabelHour + 12
-          // if (hourValue === currentHour) {
-          //   console.log('value: ', value, 'index: ', index, 'valueLabel: ', valueLabel, 'hourValue: ', hourValue, 'currentHour: ', currentHour)
-          //   return 'NOW'
-          // }
           if ((index - 1) % 3 !== 0) return ''
           return `${this.getLabelForValue(value)}`
         }
