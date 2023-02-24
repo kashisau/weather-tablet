@@ -27,3 +27,7 @@
   grid-area: music;
   background: rgb(44,135,191);
   background: linear-gradient(171deg, rgba(44,135,191,1) -20%, rgba(7,71,143,1) 110%); }
+
+.roonIframe {
+  border: 0 none;
+}

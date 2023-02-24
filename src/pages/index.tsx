@@ -8,6 +8,7 @@ import TemperatureGraph from '@/components/TemperatureGraph/TemperatureGraph'
 import { type ReactElement } from 'react'
 
 export default function Home (): ReactElement {
+  const NEXT_PUBLIC_ROON_DISPLAY_URL = process.env.NEXT_PUBLIC_ROON_DISPLAY_URL
   return (
     <>
       <Head>
@@ -23,7 +24,12 @@ export default function Home (): ReactElement {
         </div>
         <Forecast/>
         <div className={styles.music}>
-
+          <iframe
+            src={NEXT_PUBLIC_ROON_DISPLAY_URL}
+            width="100%"
+            height="100%"
+            className={styles.roonIframe}
+            />
         </div>
 
     </>
