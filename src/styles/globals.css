@@ -21,3 +21,7 @@ body main {
   width: 100vw;
   height: 100vh;
 }
+
+img {
+  color-scheme: light dark;
+}

@@ -5,8 +5,8 @@
 
 .forecastDay {
     composes: forecastComponents;
-    width: 140px;
-    padding: 20px;
+    width: 120px;
+    padding: 30px;
     display: inline-block;
 }
 
@@ -26,10 +26,10 @@
 
 .dayMax {
     composes: forecastComponents;
-    font-size: 3em;
+    font-size: 3.33em;
 }
 
 .dayMin {
     composes: forecastComponents;
-    font-size: 2em;
+    font-size: 2.66em;
 }
