@@ -15,7 +15,10 @@ export default function TemperatureGraph () {
   const [temperatureData, setTemperatureData] = useState(undefined)
   useEffect(() => {
     getTemperature()
-    setInterval(getTemperature, 5 * 60 * 1000)
+    const temperatureUpdate = setInterval(getTemperature, 5 * 60 * 1000)
+    return () => {
+      clearInterval(temperatureUpdate)
+    }
   }, [])
 
   async function getTemperature () {

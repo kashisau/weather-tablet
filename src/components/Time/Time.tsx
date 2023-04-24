@@ -24,7 +24,11 @@ export default function Time (): ReactElement {
       setNow(extractHourMinute(new Date()))
     }
     refreshNow()
-    setInterval(refreshNow, 1000)
+    const timeRefresh = setInterval(refreshNow, 1000)
+
+    return () => {
+      clearInterval(timeRefresh)
+    }
   }, [])
 
   return (

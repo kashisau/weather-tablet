@@ -44,7 +44,11 @@ export default function Temp (): ReactElement {
     void getRoomTemps()
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
-    setInterval(getRoomTemps, 1000 * 60)
+    const roomTempUpdate = setInterval(getRoomTemps, 1000 * 60)
+
+    return () => {
+      clearInterval(roomTempUpdate)
+    }
   }, [])
   return (
     <>

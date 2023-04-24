@@ -29,7 +29,11 @@ export default function Forecast (): ReactElement {
     void getForecast()
 
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
-    setInterval(getForecast, 1000 * 60)
+    const forecastUpdate = setInterval(getForecast, 1000 * 60)
+
+    return () => {
+      clearInterval(forecastUpdate)
+    }
   }, [])
 
   return (
