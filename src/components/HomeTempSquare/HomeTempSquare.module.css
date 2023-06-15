@@ -1,0 +1,28 @@
+.room {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .room:nth-child(2),
+  .room:nth-child(4) {
+    background: rgb(31,52,115);
+    background: radial-gradient(circle at -10% 100%, rgba(83,81,140,1) 0%, rgba(31,52,115,1) 100%);
+
+  }
+  
+  .room:nth-child(3),
+  .room:nth-child(5) {
+    background: rgb(31,52,115);
+    background: radial-gradient(circle at 100% -10%, rgba(83,81,140,1) 0%, rgba(31,52,115,1) 100%);
+  }
+
+  .roomIcon {
+    width: 2em;
+    vertical-align: middle;
+    padding: 0.5em;
+  }
+
+  .temperature {
+    font-size: 4em;
+    text-align: center;
+  }

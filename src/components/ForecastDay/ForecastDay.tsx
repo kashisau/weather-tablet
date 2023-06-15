@@ -8,14 +8,13 @@ interface ForecastDayInput {
   dayMax: number
   dayMin: number
 }
+export function coalescePrecisCodes (precisCode: string): string {
+  const iconFilename = precisCodeIcons.find(precisIcon => precisIcon.code === precisCode)
+  if (iconFilename == null) return 'weather-icon-mostly-fine.svg'
+  return iconFilename.icon
+}
 
 export default function ForecastDay ({ day, outlook, dayMax, dayMin }: ForecastDayInput): ReactElement {
-  function coalescePrecisCodes (precisCode: string): string {
-    const iconFilename = precisCodeIcons.find(precisIcon => precisIcon.code === precisCode)
-    if (iconFilename == null) return 'weather-icon-mostly-fine.svg'
-    return iconFilename.icon
-  }
-
   return (
         <div className={styles.forecastDay}>
             <h2 className={styles.forecastDayText}>{day.substring(0, 3)}</h2>

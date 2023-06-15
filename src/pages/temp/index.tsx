@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from './Temp.module.css'
 
 import { useEffect, useState, type ReactElement } from 'react'
+import HomeTempSquare from '@/components/HomeTempSquare/HomeTempSquare'
 
 const ROOM_TEMP_URL = process.env.NEXT_PUBLIC_ROOM_TEMP_URL
 const ROOM_TEMP_TOKEN = process.env.NEXT_PUBLIC_ROOM_TEMP_TOKEN
@@ -62,22 +63,26 @@ export default function Temp (): ReactElement {
         <h1 className={styles.heading}>
         Fennell me home
         </h1>
-        <div className={styles.room}>
-            <h2><img className={styles.roomIcon} src="/images/double-bed.svg" alt="Bedroom icon" /> Bedroom</h2>
-            <h3 className={styles.temperature}>{(bedroomTemp != null) ? bedroomTemp : '--'}°C</h3>
-        </div>
-        <div className={styles.room}>
-            <h2><img className={styles.roomIcon} src="/images/living-room.svg" alt="Living room icon" />Living room</h2>
-            <h3 className={styles.temperature}>{(livingRoomTemp != null) ? livingRoomTemp : '--'}°C</h3>
-        </div>
-        <div className={styles.room}>
-            <h2><img className={styles.roomIcon} src="/images/workplace.svg" alt="Office icon" />Office</h2>
-            <h3 className={styles.temperature}>{(officeTemp != null) ? officeTemp : '--'}°C</h3>
-        </div>
-        <div className={styles.room}>
-            <h2><img className={styles.roomIcon} src="/images/tree.svg" alt="Balcony icon" />Outside</h2>
-            <h3 className={styles.temperature}>{(outsideTemp != null) ? outsideTemp : '--'}°C</h3>
-        </div>
+        <HomeTempSquare
+          room="Bedroom"
+          temperature={bedroomTemp}
+          roomIconFilepath="/images/double-bed.svg"
+        />
+        <HomeTempSquare
+          room="Living Room"
+          temperature={livingRoomTemp}
+          roomIconFilepath="/images/living-room.svg"
+        />
+        <HomeTempSquare
+          room="Office"
+          temperature={officeTemp}
+          roomIconFilepath="/images/workplace.svg"
+        />
+        <HomeTempSquare
+          room="Outside"
+          temperature={outsideTemp}
+          roomIconFilepath="/images/tree.svg"
+        />
     </div>
     </>
   )

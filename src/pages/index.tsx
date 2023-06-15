@@ -6,9 +6,9 @@ import CurrentWeatherIcon from '@/components/CurrentWeatherIcon/CurrentWeatherIc
 import Forecast from '@/components/Forecast/Forecast'
 import TemperatureGraph from '@/components/TemperatureGraph/TemperatureGraph'
 import { type ReactElement } from 'react'
+import WeatherDataProvider from '@/components/WeatherDataContext/WeatherDataContext'
 
 export default function Home (): ReactElement {
-  const NEXT_PUBLIC_ROON_DISPLAY_URL = process.env.NEXT_PUBLIC_ROON_DISPLAY_URL
   return (
     <>
       <Head>
@@ -18,21 +18,14 @@ export default function Home (): ReactElement {
         <link rel="icon" href="/favicon.png" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </Head>
+      <WeatherDataProvider>
         <div className={styles.summary}>
           <Time />
           <CurrentWeatherIcon />
           <TemperatureGraph />
         </div>
         <Forecast/>
-        <div className={styles.music}>
-          <iframe
-            src={NEXT_PUBLIC_ROON_DISPLAY_URL}
-            width="100%"
-            height="100%"
-            className={styles.roonIframe}
-            />
-        </div>
-
+      </WeatherDataProvider>
     </>
   )
 }

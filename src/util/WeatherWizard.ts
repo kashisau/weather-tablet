@@ -1,3 +1,5 @@
+import { type WeatherData } from '@/common/types/weatherResponse'
+
 interface WillyWeatherDayEntry {
   dateTime: string
   precisCode: string
@@ -48,7 +50,7 @@ export interface ParramattaWeatherTemperature {
   data: ParramattaTemperatureHour[]
 }
 
-export function extractDaysForecast (forecast: WillyWeatherForecast): ForecastDayData[] {
+export function extractDaysForecast (forecast: WillyWeatherForecast | WeatherData): ForecastDayData[] {
   const forecastDays: ForecastDayData[] = []
 
   forecast.forecasts.weather.days.forEach(

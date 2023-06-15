@@ -152,7 +152,7 @@ const annotationTemplate = {
 
 export default function TemperatureChartjs ({ temperatureData }) {
   const currentTime = new Date()
-  const currentHour = currentTime.getHours() + currentTime.getMinutes() / 60
+  const currentHour = Math.round(currentTime.getHours() + currentTime.getMinutes() / 60) + 'AM'
 
   chartOptions.plugins.annotation.annotations.line1 = {
     ...annotationTemplate,
