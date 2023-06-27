@@ -2,7 +2,6 @@ import Head from 'next/head'
 import styles from './Roon.module.css'
 
 import Time from '@/components/Time/Time'
-import CurrentWeatherIcon from '@/components/CurrentWeatherIcon/CurrentWeatherIcon'
 import { type ReactElement } from 'react'
 import WeatherDataProvider from '@/components/WeatherDataContext/WeatherDataContext'
 import TemperatureDataProvider from '@/components/TemperatureDataContext/TemperatureDataContext'
@@ -23,7 +22,6 @@ export default function Home (): ReactElement {
         <TemperatureDataProvider>
         <div className={styles.summary}>
           <Time />
-          <CurrentWeatherIcon />
         </div>
         <iframe
           src={NEXT_PUBLIC_ROON_DISPLAY_URL}
