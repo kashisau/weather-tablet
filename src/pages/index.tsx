@@ -7,6 +7,7 @@ import Forecast from '@/components/Forecast/Forecast'
 import TemperatureGraph from '@/components/TemperatureGraph/TemperatureGraph'
 import { type ReactElement } from 'react'
 import WeatherDataProvider from '@/components/WeatherDataContext/WeatherDataContext'
+import TemperatureDataProvider from '@/components/TemperatureDataContext/TemperatureDataContext'
 
 export default function Home (): ReactElement {
   return (
@@ -19,12 +20,14 @@ export default function Home (): ReactElement {
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </Head>
       <WeatherDataProvider>
+        <TemperatureDataProvider>
         <div className={styles.summary}>
           <Time />
           <CurrentWeatherIcon />
           <TemperatureGraph />
         </div>
-        <Forecast/>
+        <Forecast />
+        </TemperatureDataProvider>
       </WeatherDataProvider>
     </>
   )

@@ -6,3 +6,17 @@
     height: 14em;
     margin: 0 auto;
 }
+
+.currentTemperature {
+    grid-column: 1 / 2;
+    grid-row: 3 / 3;
+    margin: 0 auto;
+
+    font-size: 3em;
+}
+
+.roomIcon {
+    width: 1em;
+    vertical-align: middle;
+    padding: 0.5em;
+  }
