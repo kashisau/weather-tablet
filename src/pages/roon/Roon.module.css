@@ -1,0 +1,24 @@
+.summary {
+    background: rgb(31,52,115);
+    background: linear-gradient(125deg, rgba(31,52,115,1) -20%, rgba(83,81,140,1) 120%);
+    grid-row: 1 / 3;
+    grid-column: 1 / 1;
+    justify-content: center;
+    text-align: center;
+}
+
+.summary > img {
+    display: block;
+}
+
+.summary > h2 {
+    margin-left: -2em;
+}
+
+.roonIframe {
+    border: 0 none;
+    grid-row: 1 / 3;
+    grid-column: 2 / 3;
+    width: 100%;
+    height: 100%;
+}
